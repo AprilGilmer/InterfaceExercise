@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace InterfaceExercise
 {
@@ -6,34 +7,50 @@ namespace InterfaceExercise
     {
         static void Main(string[] args)
         {
-            //TODO Be sure to follow BEST PRACTICES when creating classes and interfaces
+            var carOne = new Car();
+            carOne.Make = "Subaru";
+            carOne.Model = "WRX";
+            carOne.Year = 2002;
+            carOne.WheelCount = 4;
+            carOne.Headquarters = "Subaru Headquarters";
+            carOne.Logo = "Subaru Logo";
+            carOne.HasTrunk = true;
+            carOne.TrunkSpace = 10;
 
-            //Create 2 Interfaces called IVehicle & ICompany
+            var truckOne = new Truck();
+            truckOne.Make = "GMC";
+            truckOne.Model = "Sierra";
+            truckOne.Year = 2010;
+            truckOne.WheelCount = 4;
+            truckOne.Headquarters = "GMC Headquarters";
+            truckOne.Logo = "GMC Logo";
+            truckOne.TruckBedSpace = 20;
+            truckOne.HasTruckBed = true;
 
-            //Create 3 classes called Car , Truck , & SUV
+            var suvOne = new Suv();
+            suvOne.Make = "Honda";
+            suvOne.Model = "Pilot";
+            suvOne.Year = 1993;
+            suvOne.WheelCount = 4;
+            suvOne.Headquarters = "Honda Headquarters";
+            suvOne.Logo = "Honda Logo";
+            suvOne.NumberOfRows = 3;
+            suvOne.CargoSpace = 30;
 
-            //In your IVehicle:
+            var parkingLot = new List<IVehicle>() { carOne, truckOne, suvOne };
+
+            foreach (var ride in parkingLot)
+            {
+                Console.WriteLine($"This is a {ride.Make} {ride.Model}, made in the year {ride.Year}.\n");
+            }
+
+
+           
+
+          
+
             
-                /* Create 4 members that Car, Truck, & SUV all have in common.
-                 * Example: public int NumberOfWheels { get; set; }
-                 */
-            
 
-            //In ICompany: 
-            
-                /* Create 2 members that are specific to each every company
-                 * regardless of vehicle type.
-                 * Example: public string Logo { get; set; }
-                 */
-
-            //In each of your Car, Truck, and SUV classes
-
-                /* Create 2 members that are specific to each class
-                 * Example for Car: public bool HasTrunk { get; set; }
-                 * Example for SUV: public int NumberOfSeats { get; set; }
-                 *
-                 * Then, Set each class to inherit from both IVehicle and ICompany and implement their members.
-                 */
 
             //Now, create objects of your 3 classes and give their members values.
             //Creatively display and organize their values
